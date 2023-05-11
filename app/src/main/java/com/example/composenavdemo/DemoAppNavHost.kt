@@ -16,7 +16,9 @@ fun DemoAppNavHost(
 
         composable(route = "home_screen"){
             HomeScreen(
-                onNavigateToSecondScreen = {navController.navigate("second_screen")}
+                onNavigateToSecondScreen = {
+                    navController.navigate("second_screen/$it")
+                }
             )
         }
 
