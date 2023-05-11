@@ -2,9 +2,11 @@ package com.example.composenavdemo
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 @Composable
 fun DemoAppNavHost(
@@ -18,8 +20,17 @@ fun DemoAppNavHost(
             )
         }
 
-        composable(route = "second_screen"){
-            SecondScreen()
+        composable(route = "second_screen/{inputName}",
+            arguments = listOf(
+                navArgument("inputName"){
+                    type = NavType.StringType
+                }
+            )
+
+        ){
+            SecondScreen(
+                textToDisplay = it.arguments?.getString("inputName").toString()
+            )
         }
     }
 }
