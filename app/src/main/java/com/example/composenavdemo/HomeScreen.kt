@@ -43,7 +43,7 @@ fun HomeScreen( navController: NavController, modifier: Modifier = Modifier){
 
         Button(
             onClick = {
-
+               navController.navigate("second_screen")
             },
             modifier = modifier.fillMaxWidth()
         ) {

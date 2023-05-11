@@ -1,7 +1,6 @@
 package com.example.composenavdemo
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,7 +13,7 @@ fun DemoAppNavHost(
     NavHost(navController = navController, startDestination = "home_screen"){
 
         composable(route = "home_screen"){
-            HomeScreen()
+            HomeScreen(navController)
         }
 
         composable(route = "second_screen"){
